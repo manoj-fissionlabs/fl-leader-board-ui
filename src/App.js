@@ -7,6 +7,7 @@ import Backend from './pages/Backend/Backend';
 import QA from './pages/QA/QA';
 import IT from './pages/IT/IT';
 import HRs from './pages/HRs/HRs';
+import Profile from './pages/Profile/Profile';
 import NotFound from './pages/NotFound/NotFound';
 import { sections } from "./utils/constants";
 
@@ -41,6 +42,7 @@ const App = () => {
             <Route path="/qa" element={<QA />}></Route>
             <Route path="/it" element={<IT />}></Route>
             <Route path="/hrs" element={<HRs />}></Route>
+            <Route path="/profile" element={<Profile />}></Route>
             <Route path='*' element={<NotFound />} />
           </Routes>
         </div>

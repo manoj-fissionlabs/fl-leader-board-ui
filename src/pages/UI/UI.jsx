@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import DonutChart from "../../components/DonutChart/DonutChart";
 import { technologies, employees, donutChartColors } from "../../utils/data";
+import { setProgress, sortArrayInDescendingOrder } from "../../utils/helpers";
 
 const UI = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -32,6 +33,12 @@ const UI = () => {
     });
     console.log("mappedUiTechnologies --> ", mappedUiTechnologies);
     setChartData(mappedUiTechnologies);
+    const mappedUiTechnologiesWithMembers = formUiTechnologiesWithMembers.map(member => {
+      return {
+        "title": member.name + ' ' + member.surname,
+        "value": member.experience
+      }
+    });
     setUiTechnologiesWithMembers(formUiTechnologiesWithMembers);
     console.log("formUiTechnologiesWithMembers --> ", formUiTechnologiesWithMembers);
 
@@ -57,9 +64,25 @@ const UI = () => {
             {chartData && uiTechnologiesWithMembers && chartData.map((tech, i) => (<div key={i}>
               <div className="col mb-4">
                 <h3>{tech.label}</h3>
-                <div className="race-chart-container p-3">
-                  {uiTechnologiesWithMembers[i].map((uiTechnologiesWithMember, j) => (
-                    <div key={j} className="p-2">{uiTechnologiesWithMember.name}</div>
+                <div className="race-chart-main-container p-3">
+                  {sortArrayInDescendingOrder(uiTechnologiesWithMembers[i]).map((uiTechnologiesWithMember, j) => (
+                    // <div key={j} className="p-2">{uiTechnologiesWithMember.name} {uiTechnologiesWithMember.surname}</div>
+                    <div className={`race-chart-container tr d-flex justify-content-between align-items-center mb-2 w-100 text-ellipsis pointer`}
+                      style={{ cursor: 'pointer', height: '40px' }}
+                      key={j}>
+                      <div className="w-100 racechart-title-container raceChart-radius">
+                        <div className={`td font-size-16 text-capitalize d-flex align-items-center ps-3 p-3 raceChart-radius`}
+                          width={setProgress(uiTechnologiesWithMember.experience, uiTechnologiesWithMembers[i])}
+                          style={{ color: 'black', backgroundColor: '#2d95ec', width: `${setProgress(uiTechnologiesWithMember.experience, uiTechnologiesWithMembers[i]) + '%'}`, backgroundImage: `linear-gradient(to right, ${setProgress(uiTechnologiesWithMember.experience, uiTechnologiesWithMembers[i])}%, 'black' 0%)` }}>
+                          <div className={`raceChart-itemTitle bold-text`}>{uiTechnologiesWithMember.name}</div>
+                        </div>
+                      </div>
+                      <div className={`td text-right d-flex mx-1 px-2`}>
+                        <span className="item-count" style={{ color: '#000' }}>
+                          {uiTechnologiesWithMember.experience}
+                        </span>
+                      </div>
+                    </div>
                   ))}
                 </div>
               </div>

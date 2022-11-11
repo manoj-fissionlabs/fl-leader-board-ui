@@ -40,9 +40,34 @@
   border-radius: 50%;
 }
 
-.race-chart-container {
+.race-chart-main-container {
   background-color: #f5f5f5;
   border-radius: 5px;
 }
 
 /* Donut Chart styles - ends */
+
+/* Race Chart styles - starts */
+
+.race-chart-container {
+  font-size: 14px;
+}
+
+.race-chart-container .role {
+  color: #4797ff;
+}
+
+.racechart-title-container {
+  background-color: #e5edf0;
+}
+
+.raceChart-itemTitle {
+  position: absolute;
+  width: max-content;
+}
+
+.raceChart-radius {
+  border-radius: 0.5rem;
+}
+
+/* Race Chart styles - ends */

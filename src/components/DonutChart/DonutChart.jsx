@@ -8,7 +8,7 @@ const DonutChart = (props) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    console.log("chartData --> ", props.chartData);
+    // console.log("chartData --> ", props.chartData);
     setChartData(props.chartData);
   }, [props.chartData]);
 
