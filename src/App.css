@@ -70,4 +70,10 @@
   border-radius: 0.5rem;
 }
 
+.text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /* Race Chart styles - ends */

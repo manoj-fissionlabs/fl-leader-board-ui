@@ -42,7 +42,7 @@ const App = () => {
             <Route path="/qa" element={<QA />}></Route>
             <Route path="/it" element={<IT />}></Route>
             <Route path="/hrs" element={<HRs />}></Route>
-            <Route path="/profile" element={<Profile />}></Route>
+            <Route path="/profile/:profileId" element={<Profile />}></Route>
             <Route path='*' element={<NotFound />} />
           </Routes>
         </div>
