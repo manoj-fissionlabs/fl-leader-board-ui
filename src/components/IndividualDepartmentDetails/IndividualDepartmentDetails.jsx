@@ -4,6 +4,7 @@ import DonutChart from "../../components/DonutChart/DonutChart";
 import { donutChartColors } from "../../utils/data";
 import { setProgress, sortArrayInDescendingOrder } from "../../utils/helpers";
 import api from "../../api/api";
+import "./IndividualDepartmentDetails.css"
 
 const IndividualDepartmentDetails = ({ departmentName }) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -53,14 +54,15 @@ const IndividualDepartmentDetails = ({ departmentName }) => {
 
     setIsLoading(false);
   }
-
+  
   return (<>
     {uiTechnologies && chartData && (<div className="donutChartContainer d-flex align-items-center">
       <div>{<DonutChart chartData={chartData} />}</div>
-      <div className="w-25 m-auto">
-        {chartData.map((tech, i) => (<div key={i} className="d-flex justify-content-around align-items-center my-4">
+      <div className="m-auto">
+        {chartData.map((tech, i) => (<div key={i} className="chart_data">
           <div className="donutChartColorIndicator" style={{ backgroundColor: donutChartColors[i] }}></div>
-          <h4 className="m-0">{tech.label} - {tech.value}</h4>
+          <h4 className="m-0">{tech.label} </h4>
+          <h4 className="m-0"> - {tech.value}</h4>
         </div>))}
       </div>
     </div>)}

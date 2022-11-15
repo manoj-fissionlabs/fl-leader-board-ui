@@ -10,6 +10,7 @@ import HRs from './pages/HRs/HRs';
 import Profile from './pages/Profile/Profile';
 import NotFound from './pages/NotFound/NotFound';
 import { sections } from "./utils/constants";
+import FilterIcon from './assets/filter.png';
 
 const App = () => {
   const navigate = useNavigate();
@@ -27,7 +28,8 @@ const App = () => {
     <div className="App">
       <Navbar />
       <div className="filter-section p-3">
-        <div className="col-md-10 m-auto">
+        <div className="col-md-10 m-auto filter-container">
+          <img src={ FilterIcon } className="filter-icon" alt="filter Icon" />
           <select className="p-1" onChange={(e) => handleChangeRedirect(e.target.value)}>
             {sections.map(section => (<option key={section.id} value={section.url} selected={pathname === section.url ? true : false}>{section.title}</option>))}
           </select>

@@ -9,7 +9,7 @@ const IT = () => {
 
   return (
     <div className="no-shadow">
-      <div className="col-md-8 m-auto">
+      <div className="col-md-8 col-sm-8 m-auto">
         <h5 className='text-center bold-text mt-3 mb-4'>This is IT page</h5>
       </div>
     </div>
