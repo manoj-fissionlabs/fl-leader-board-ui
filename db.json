@@ -56,6 +56,25 @@
     }
   ],
 
+  "IT": [
+    {
+      "technologyId": 0,
+      "title": "React JS"
+    },
+    {
+      "technologyId": 1,
+      "title": "Angular"
+    },
+    {
+      "technologyId": 2,
+      "title": "Vue JS"
+    },
+    {
+      "technologyId": 3,
+      "title": "Svelte"
+    }
+  ],
+
   "backendTechnologies": [
     {
       "technologyId": 4,
