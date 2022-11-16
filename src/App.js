@@ -11,6 +11,7 @@ import Profile from './pages/Profile/Profile';
 import NotFound from './pages/NotFound/NotFound';
 import { sections } from "./utils/constants";
 import FilterIcon from './assets/filter.png';
+import { AiFillCaretDown } from "react-icons/ai";
 
 const App = () => {
   const navigate = useNavigate();
@@ -30,10 +31,13 @@ const App = () => {
       <div className="filter-section p-3">
         <div className="col-md-10 m-auto filter-container">
           <img src={ FilterIcon } className="filter-icon" alt="filter Icon" />
-          <select className="p-1 select" onChange={(e) => handleChangeRedirect(e.target.value)}>
+           <div className="select-down-icon">
+            <i><AiFillCaretDown/></i>
+            <select className="p-1 select" onChange={(e) => handleChangeRedirect(e.target.value)}>
             {sections.map(section => (<option key={section.id} value={section.url} selected={pathname === section.url ? true : false}>{section.title}</option>))}
           </select>
         </div>
+      </div>
       </div>
       <div className="site-body mt-1">
         <div className="m-auto">

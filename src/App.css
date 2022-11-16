@@ -33,7 +33,7 @@
 }
 
 .filter-icon {
-  height: 2rem;
+  height: 1.6rem;
 }
 
 .filter-container {
@@ -43,14 +43,33 @@
   gap: 10px;
 }
 
+
+.select-down-icon{
+  position: relative;
+}
+
+.select-down-icon i {
+  position: absolute;
+  left: 184px;
+  top: 7px;
+}
+
+.select-down-icon svg{
+  padding: 4px;
+}
+
 .select {
   outline: none;
   background: #fcfcfc 0% 0% no-repeat padding-box;
   border: 1px solid #dedede;
   border-radius: 15px;
-  opacity: 1;
-  padding: 0px 10px;
+  padding: 1px 15px 2px 13px !important;
   height: 40px;
+  appearance: none;
+  width: 13.2rem;
+  font-weight: 600;
+  font-size: 14px;
+  color: #474343;
 }
 
 /* Donut Chart styles - starts */
