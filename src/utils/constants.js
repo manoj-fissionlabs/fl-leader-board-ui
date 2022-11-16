@@ -30,3 +30,51 @@ export const sections = [
         url: '/hrs'
     }
 ];
+
+export const skills = [
+    {
+        skill: 0,
+        title: "React JS",
+    },
+    {
+        skill: 1,
+        title: "Angular",
+    },
+    {
+        skill: 2,
+        title: "Vue JS",
+    },
+    {
+        skill: 3,
+        title: "Svelte",
+    },
+    {
+        skill: 4,
+        title: "NodeJS",
+    },
+    {
+        skill: 5,
+        title: "Python",
+    },
+    {
+        skill: 6,
+        title: "Dotnet",
+    },
+    {
+        skill: 7,
+        title: "PHP",
+    },
+    {
+        skill: 8,
+        title: "React JS",
+    },
+    {
+        skill: 9,
+        title: "CSS",
+    },
+    {
+        skill: 10,
+        title: "Javascript",
+    },
+
+];

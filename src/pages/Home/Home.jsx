@@ -55,7 +55,7 @@ const Home = () => {
   }
 
   return (
-    <div className="m-auto py-5">
+    <div className="m-auto mb-5 py-5">
       {isLoading && (
         <div className='notFoundCenteredDiv'>
           <div className='m-auto text-center'>
