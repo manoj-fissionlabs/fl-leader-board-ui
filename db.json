@@ -17,7 +17,6 @@
       "title": "Svelte"
     }
   ],
-
   "QATechnologies": [
     {
       "technologyId": 0,
@@ -36,7 +35,6 @@
       "title": "Svelte"
     }
   ],
-
   "HR": [
     {
       "technologyId": 0,
@@ -55,7 +53,6 @@
       "title": "Svelte"
     }
   ],
-
   "IT": [
     {
       "technologyId": 0,
@@ -74,7 +71,6 @@
       "title": "Svelte"
     }
   ],
-
   "backendTechnologies": [
     {
       "technologyId": 4,
@@ -96,121 +92,243 @@
   "employees": [
     {
       "employeeId": 0,
+      "emailId": "Employee@fissionlabs.com",
+      "mobileNo": "7896501230",
+      "managerName": "Shanthan",
       "name": "Manoj Kumar",
       "surname": "Jadala",
-      "skills": [0, 1, 3, 4, 7],
+      "designation": "UI Developer",
+      "skills": [
+        0,
+        1,
+        3,
+        4,
+        7
+      ],
       "experience": 5
     },
     {
       "employeeId": 1,
+      "emailId": "manideep@fissionlabs.com",
+      "mobileNo": "7896041230",
+      "managerName": "Shanthan",
       "name": "Manideep",
       "surname": "Kotagiri",
-      "skills": [0, 1],
+      "designation": "UX Designer",
+      "skills": [
+        0,
+        1
+      ],
       "experience": 4
     },
     {
       "employeeId": 2,
+      "emailId": "Zameer@fissionlabs.com",
+      "mobileNo": "7897541230",
+      "managerName": "swetha",
       "name": "Zameer",
       "surname": "Sheikh",
-      "skills": [0, 1, 3],
+      "designation": "UI Developer",
+      "skills": [
+        0,
+        1,
+        3
+      ],
       "experience": 4
     },
     {
       "employeeId": 3,
+      "emailId": "Employee@fissionlabs.com",
+      "mobileNo": "7890541230",
+      "managerName": "Shanthan",
       "name": "Raghunandan",
       "surname": "Sriperambuduru",
-      "skills": [0, 2, 3],
+      "designation": "UX Designer",
+      "skills": [
+        0,
+        2,
+        3
+      ],
       "experience": 8
     },
     {
       "employeeId": 4,
+      "emailId": "Employee@fissionlabs.com",
+      "mobileNo": "7856541230",
+      "managerName": "swetha",
       "name": "Sajjad",
       "surname": "Alam",
-      "skills": [0],
+      "designation": "UI Developer",
+      "skills": [
+        0
+      ],
       "experience": 1
     },
     {
       "employeeId": 5,
+      "emailId": "Employee@fissionlabs.com",
+      "mobileNo": "7846541230",
+      "managerName": "swetha",
       "name": "Yeshwanth",
       "surname": "Chillara",
-      "skills": [0],
+      "designation": "UX Designer",
+      "skills": [
+        0
+      ],
       "experience": 1
     },
     {
       "employeeId": 6,
+      "emailId": "Employee@fissionlabs.com",
+      "mobileNo": "7826541230",
+      "managerName": "Jittin",
       "name": "Hari Nagarjuna Chowdary",
       "surname": "Polavarapu",
-      "skills": [0],
+      "designation": "UI Developer",
+      "skills": [
+        0
+      ],
       "experience": 1
     },
     {
       "employeeId": 7,
+      "emailId": "Employee@fissionlabs.com",
+      "mobileNo": "7816541230",
+      "managerName": "Shanthan",
       "name": "Abdhul",
       "surname": "Rahaman",
-      "skills": [2],
+      "designation": "UX Designer",
+      "skills": [
+        2
+      ],
       "experience": 3
     },
     {
       "employeeId": 8,
+      "emailId": "Employee@fissionlabs.com",
+      "mobileNo": "7836541230",
+      "managerName": "Shanthan",
       "name": "Harish",
       "surname": "Pillarisetti",
-      "skills": [2],
+      "designation": "UI Developer",
+      "skills": [
+        2
+      ],
       "experience": 1
     },
     {
       "employeeId": 9,
+      "emailId": "Employee@fissionlabs.com",
+      "mobileNo": "7806541230",
+      "managerName": "swetha",
       "name": "Chandan",
       "surname": "Sankaramadi",
-      "skills": [0, 1, 2],
+      "designation": "UX Designer",
+      "skills": [
+        0,
+        1,
+        2
+      ],
       "experience": 7
     },
     {
       "employeeId": 10,
+      "emailId": "Employee@fissionlabs.com",
+      "mobileNo": "7696541230",
+      "managerName": "Shanthan",
       "name": "Vivek",
       "surname": "Samudrala",
-      "skills": [0, 1],
+      "designation": "UI Developer",
+      "skills": [
+        0,
+        1
+      ],
       "experience": 4
     },
     {
       "employeeId": 11,
+      "emailId": "Employee@fissionlabs.com",
+      "mobileNo": "7796541230",
+      "managerName": "Jittin",
       "name": "Kamesh",
       "surname": "Vadlamani",
-      "skills": [0, 1],
+      "designation": "UX Designer",
+      "skills": [
+        0,
+        1
+      ],
       "experience": 4
     },
     {
       "employeeId": 12,
+      "emailId": "Employee@fissionlabs.com",
+      "mobileNo": "9996541230",
+      "managerName": "swetha",
       "name": "Varun",
       "surname": "Kruthiventi",
-      "skills": [0, 1, 4, 5, 7],
+      "designation": "UX Designer",
+      "skills": [
+        0,
+        1,
+        4,
+        5,
+        7
+      ],
       "experience": 6
     },
     {
       "employeeId": 13,
+      "emailId": "Employee@fissionlabs.com",
+      "mobileNo": "9896541230",
+      "managerName": "Jittin",
       "name": "Adiluddin",
       "surname": "Mohammed",
-      "skills": [4, 5],
+      "designation": "UX Designer",
+      "skills": [
+        4,
+        5
+      ],
       "experience": 8
     },
     {
       "employeeId": 14,
+      "emailId": "Employee@fissionlabs.com",
+      "mobileNo": "8896541230",
+      "managerName": "Shanthan",
       "name": "Krishna",
       "surname": "Battu",
-      "skills": [4, 5, 6],
+      "designation": "UI Developer",
+      "skills": [
+        4,
+        5,
+        6
+      ],
       "experience": 10
     },
     {
       "employeeId": 15,
+      "emailId": "Employee@fissionlabs.com",
+      "mobileNo": "9896541230",
+      "managerName": "swetha",
       "name": "Abhishek Vilas",
       "surname": "Rane",
-      "skills": [4],
+      "designation": "UI Developer",
+      "skills": [
+        4
+      ],
       "experience": 4
     },
     {
       "employeeId": 16,
+      "emailId": "Employee@fissionlabs.com",
+      "mobileNo": "7796541230",
+      "managerName": "Jittin",
       "name": "Ashutosh",
       "surname": "Pandey",
-      "skills": [0],
+      "designation": "UI Developer",
+      "skills": [
+        0
+      ],
       "experience": 4
     }
   ]
