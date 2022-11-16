@@ -1,16 +1,62 @@
 .site-navbar {
-    background-color: #fff;
-    color: #000;
-    box-shadow: 0 5px 8px 0 rgba(48, 48, 48, 0.25);
-    z-index: 100;
+  background-color: #fff;
+  color: #000;
+  box-shadow: 0 5px 8px 0 rgba(48, 48, 48, 0.25);
+  z-index: 100;
 }
 
 .navbar-title,
 .navbar-title:hover {
-    color: #000 !important;
-    font-size: 1.5rem;
+  color: #000 !important;
+  font-size: 1.5rem;
 }
 
 .navbar-text {
-    color: #000;
+  color: #000;
+}
+
+.navbar-brand img {
+  width: 100%;
+  height: 50%;
+}
+
+.search-input {
+  background: #f7f7f7;
+  border: 1px solid #dedede;
+  border-radius: 15px;
+  opacity: 1;
+  width: 16rem;
+  text-align: center;
+  height: 2.5rem;
+  font-size: 13px;
+  opacity: 0.6;
+  padding: 0px 0px 0px 20px;
+  font-weight: 600;
+  outline: none;
+}
+.pointer {
+  position: relative;
+}
+.search-icon {
+  position: absolute;
+  top: 10px;
+}
+
+.search-icon svg {
+  margin-left: 2.5rem;
+  margin-bottom: 0.4rem;
+}
+
+@media (max-width: 328px) {
+  .search-input {
+    width: 100%;
+  }
+  .pointer {
+    width: 70vw;
+  }
+  .search-icon {
+    position: absolute;
+    top: 10px;
+    left: -1.2rem;
+  }
 }

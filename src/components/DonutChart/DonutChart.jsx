@@ -17,8 +17,8 @@ const DonutChart = (props) => {
       <ReactDonut
         colors={donutChartColors}
         legend={false}
-        height="400"
-        width="400"
+        height="370"
+        width="370"
         data={chartData}
       />
     </div>

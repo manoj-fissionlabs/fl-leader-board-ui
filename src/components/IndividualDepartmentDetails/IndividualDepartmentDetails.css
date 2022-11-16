@@ -1,0 +1,51 @@
+.chart-data-container {
+  width: 15rem;
+}
+
+.donutChartContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.chart_data {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.chart_data h4 {
+  align-self: flex-end;
+}
+
+@media screen and (max-width: 1125px) {
+  .chart_data {
+    grid-template-columns: 1fr 2fr 1fr;
+    width: 12rem;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .donutchart {
+    width: 300px !important;
+    height: 300px !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .donutChartContainer {
+    flex-direction: column !important;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .donutchart {
+    width: 300px !important;
+    height: 300px !important;
+  }
+}

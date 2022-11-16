@@ -30,7 +30,26 @@
 
 .filter-section {
   background-color: #e8e8e8;
-  margin-top: 5px;
+}
+
+.filter-icon {
+  height: 2rem;
+}
+
+.filter-container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+}
+.select {
+  outline: none;
+  background: #fcfcfc 0% 0% no-repeat padding-box;
+  border: 1px solid #dedede;
+  border-radius: 15px;
+  opacity: 1;
+  padding: 0px 10px;
+  height: 40px;
 }
 
 /* Donut Chart styles - starts */

@@ -4,6 +4,8 @@ import DonutChart from "../../components/DonutChart/DonutChart";
 import { donutChartColors } from "../../utils/data";
 import { setProgress, sortArrayInDescendingOrder } from "../../utils/helpers";
 import api from "../../api/api";
+import "./IndividualDepartmentDetails.css"
+import { AiOutlineSearch } from "react-icons/ai";
 
 const IndividualDepartmentDetails = ({ departmentName }) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -53,14 +55,15 @@ const IndividualDepartmentDetails = ({ departmentName }) => {
 
     setIsLoading(false);
   }
-
+  
   return (<>
     {uiTechnologies && chartData && (<div className="donutChartContainer d-flex align-items-center">
       <div>{<DonutChart chartData={chartData} />}</div>
-      <div className="w-25 m-auto">
-        {chartData.map((tech, i) => (<div key={i} className="d-flex justify-content-around align-items-center my-4">
+      <div className="m-auto">
+        {chartData.map((tech, i) => (<div key={i} className="chart_data">
           <div className="donutChartColorIndicator" style={{ backgroundColor: donutChartColors[i] }}></div>
-          <h4 className="m-0">{tech.label} - {tech.value}</h4>
+          <h4 className="m-0">{tech.label} </h4>
+          <h4 className="m-0"> - {tech.value}</h4>
         </div>))}
       </div>
     </div>)}
@@ -70,7 +73,13 @@ const IndividualDepartmentDetails = ({ departmentName }) => {
         {chartData && uiTechnologiesWithMembers && chartData.map((tech, i) => (<div key={i}>
           <div className="col mb-4">
             <h3>{tech.label}</h3>
-            <div className="race-chart-main-container p-3">
+            <div className="race-chart-main-container p-4">
+            <div className="navbar-text mb-4 d-flex justify-content-center align-item-center" >
+               <span className='pointer'>
+                  <i className='search-icon'> <AiOutlineSearch/></i>
+                  <input style={{ background: "#FFFFFF"}} type="text" className='search-input' placeholder='Search for Employee' />
+               </span>
+            </div>
               {sortArrayInDescendingOrder(uiTechnologiesWithMembers[i]).map((uiTechnologiesWithMember, j) => (
                 // <div key={j} className="p-2">{uiTechnologiesWithMember.name} {uiTechnologiesWithMember.surname}</div>
                 <div className={`race-chart-container tr d-flex justify-content-between align-items-center mb-2 w-100 text-ellipsis pointer`}
