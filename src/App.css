@@ -96,3 +96,19 @@
 }
 
 /* Race Chart styles - ends */
+
+.styled-node-main {
+  padding: 5px 30px;
+  width: 300px;
+  min-height: 115px;
+  border-radius: 8px;
+  display: inline-block;
+  background-color: #fff;
+  box-shadow: 0 2px 8px 0 rgba(48, 48, 48, 0.25);
+  border-radius: 5px;
+  margin: 2px;
+}
+
+.styled-node {
+  display: inline-block;
+}
