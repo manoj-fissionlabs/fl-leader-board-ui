@@ -33,7 +33,7 @@
 }
 
 .filter-icon {
-  height: 2.9rem;
+  height: 2rem;
 }
 
 .filter-container {
@@ -42,16 +42,14 @@
   align-items: center;
   gap: 10px;
 }
-
-.filter-container select {
+.select {
   outline: none;
   background: #fcfcfc 0% 0% no-repeat padding-box;
   border: 1px solid #dedede;
-  border-radius: 5px;
+  border-radius: 15px;
   opacity: 1;
   padding: 0px 10px;
   height: 40px;
-  /* width: 17rem; */
 }
 
 /* Donut Chart styles - starts */

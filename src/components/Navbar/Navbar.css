@@ -32,12 +32,14 @@
   opacity: 0.6;
   padding: 0px 0px 0px 20px;
   font-weight: 600;
+  outline: none;
 }
-.pointer i {
-  position: absolute;
+.pointer {
+  position: relative;
 }
 .search-icon {
-  padding: 10px;
+  position: absolute;
+  top: 10px;
 }
 
 .search-icon svg {
@@ -48,10 +50,13 @@
 @media (max-width: 328px) {
   .search-input {
     width: 100%;
-    margin-left: 0.4rem;
   }
-  .search-icon svg {
-    margin-left: 0px;
-    margin-bottom: 0.4rem;
+  .pointer {
+    width: 70vw;
+  }
+  .search-icon {
+    position: absolute;
+    top: 10px;
+    left: -1.2rem;
   }
 }
