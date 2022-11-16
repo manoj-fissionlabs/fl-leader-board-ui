@@ -12,7 +12,9 @@ const IndividualDepartmentDetails = ({ departmentName }) => {
   const [uiTechnologies, setUiTechnologies] = useState([]);
   const [chartData, setChartData] = useState([]);
   const [uiTechnologiesWithMembers, setUiTechnologiesWithMembers] = useState([]);
-
+  const [filterdUiTechnologiesMember, setFilterdUiTechnologiesMember] = useState([]);
+  const [checker, setChecker] = useState(false)
+  
   useEffect(() => {
     window.scrollTo(0, 0);
     loadUiTechnologies();
@@ -55,8 +57,18 @@ const IndividualDepartmentDetails = ({ departmentName }) => {
 
     setIsLoading(false);
   }
-  
-  return (<>
+
+  const searchChangeHandler = (e, tech, i) => {
+    const searchParams = e.target.value;
+    const filteredData = tech.filter((elem) => {
+      const fullName = elem.name + elem.surname
+      return fullName.toLocaleLowerCase().match(searchParams.toLocaleLowerCase());
+    });
+    filterdUiTechnologiesMember[i] = filteredData
+    setChecker(!checker)
+  }
+
+return (<>
     {uiTechnologies && chartData && (<div className="donutChartContainer d-flex align-items-center">
       <div>{<DonutChart chartData={chartData} />}</div>
       <div className="m-auto">
@@ -77,10 +89,10 @@ const IndividualDepartmentDetails = ({ departmentName }) => {
             <div className="navbar-text mb-4 d-flex justify-content-center align-item-center" >
                <span className='pointer'>
                   <i className='search-icon'> <AiOutlineSearch/></i>
-                  <input style={{ background: "#FFFFFF"}} type="text" className='search-input' placeholder='Search for Employee' />
+                  <input onChange={(e) => searchChangeHandler(e, uiTechnologiesWithMembers[i], i)} style={{ background: "#FFFFFF" }} type="text" className='search-input' placeholder='Search for Employee' />
                </span>
             </div>
-              {sortArrayInDescendingOrder(uiTechnologiesWithMembers[i]).map((uiTechnologiesWithMember, j) => (
+              {sortArrayInDescendingOrder(filterdUiTechnologiesMember[i] || uiTechnologiesWithMembers[i]).map((uiTechnologiesWithMember, j) => (
                 // <div key={j} className="p-2">{uiTechnologiesWithMember.name} {uiTechnologiesWithMember.surname}</div>
                 <div className={`race-chart-container tr d-flex justify-content-between align-items-center mb-2 w-100 text-ellipsis pointer`}
                   style={{ height: '40px' }}
