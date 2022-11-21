@@ -22,6 +22,18 @@
   align-self: flex-end;
 }
 
+.raceChart-itemTitle{
+  white-space: nowrap;
+  overflow: hidden;
+  width: 66%;
+  text-overflow: ellipsis;
+}
+
+.techno{
+  font-weight: bolder;
+  font-size: 1.419rem;
+}
+
 @media screen and (max-width: 1125px) {
   .chart_data {
     grid-template-columns: 1fr 2fr 1fr;

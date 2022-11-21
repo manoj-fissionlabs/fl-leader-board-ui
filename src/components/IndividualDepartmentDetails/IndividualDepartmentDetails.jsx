@@ -12,7 +12,9 @@ const IndividualDepartmentDetails = ({ departmentName }) => {
   const [uiTechnologies, setUiTechnologies] = useState([]);
   const [chartData, setChartData] = useState([]);
   const [uiTechnologiesWithMembers, setUiTechnologiesWithMembers] = useState([]);
-
+  const [filterdUiTechnologiesMember, setFilterdUiTechnologiesMember] = useState([]);
+  const [checker, setChecker] = useState(false)
+  
   useEffect(() => {
     window.scrollTo(0, 0);
     loadUiTechnologies();
@@ -55,15 +57,25 @@ const IndividualDepartmentDetails = ({ departmentName }) => {
 
     setIsLoading(false);
   }
-  
-  return (<>
+
+  const searchChangeHandler = (e, tech, i) => {
+    const searchParams = e.target.value;
+    const filteredData = tech.filter((elem) => {
+      const fullName = elem.name + elem.surname
+      return fullName.toLocaleLowerCase().match(searchParams.toLocaleLowerCase());
+    });
+    filterdUiTechnologiesMember[i] = filteredData
+    setChecker(!checker)
+  }
+
+return (<>
     {uiTechnologies && chartData && (<div className="donutChartContainer d-flex align-items-center">
       <div>{<DonutChart chartData={chartData} />}</div>
       <div className="m-auto">
         {chartData.map((tech, i) => (<div key={i} className="chart_data">
           <div className="donutChartColorIndicator" style={{ backgroundColor: donutChartColors[i] }}></div>
-          <h4 className="m-0">{tech.label} </h4>
-          <h4 className="m-0"> - {tech.value}</h4>
+          <h5 className="techno m-0">{tech.label} </h5>
+          <h5 className="techno m-0"> - {tech.value}</h5>
         </div>))}
       </div>
     </div>)}
@@ -72,15 +84,15 @@ const IndividualDepartmentDetails = ({ departmentName }) => {
       <div className="row g-3 g-lg-4 row-cols-1 row-cols-sm-1 row-cols-lg-2">
         {chartData && uiTechnologiesWithMembers && chartData.map((tech, i) => (<div key={i}>
           <div className="col mb-4">
-            <h3>{tech.label}</h3>
+            <h5 className="techno" >{tech.label}</h5>
             <div className="race-chart-main-container p-4">
             <div className="navbar-text mb-4 d-flex justify-content-center align-item-center" >
                <span className='pointer'>
                   <i className='search-icon'> <AiOutlineSearch/></i>
-                  <input style={{ background: "#FFFFFF"}} type="text" className='search-input' placeholder='Search for Employee' />
+                  <input onChange={(e) => searchChangeHandler(e, uiTechnologiesWithMembers[i], i)} style={{ background: "#FFFFFF" }} type="text" className='search-input' placeholder='Search for Employee' />
                </span>
             </div>
-              {sortArrayInDescendingOrder(uiTechnologiesWithMembers[i]).map((uiTechnologiesWithMember, j) => (
+              {sortArrayInDescendingOrder(filterdUiTechnologiesMember[i] || uiTechnologiesWithMembers[i]).map((uiTechnologiesWithMember, j) => (
                 // <div key={j} className="p-2">{uiTechnologiesWithMember.name} {uiTechnologiesWithMember.surname}</div>
                 <div className={`race-chart-container tr d-flex justify-content-between align-items-center mb-2 w-100 text-ellipsis pointer`}
                   style={{ height: '40px' }}
