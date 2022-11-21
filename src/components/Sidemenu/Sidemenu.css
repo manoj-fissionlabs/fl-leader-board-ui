@@ -1,0 +1,14 @@
+.sidebar {
+  background: #ededed 0% 0% no-repeat padding-box;
+  box-shadow: inset 0px 3px 6px #00000029;
+  padding: 0;
+  padding-top: 1.3rem;
+}
+
+.section{
+  color: #000;
+  font-weight: 600;
+  width: 100%;
+  padding: 1rem 0rem 1rem 2rem;
+  cursor: pointer;
+}
