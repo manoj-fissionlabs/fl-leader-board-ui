@@ -10,8 +10,7 @@ import HRs from './pages/HRs/HRs';
 import Profile from './pages/Profile/Profile';
 import NotFound from './pages/NotFound/NotFound';
 import { sections } from "./utils/constants";
-import FilterIcon from './assets/filter.png';
-import { AiFillCaretDown } from "react-icons/ai";
+import Sidemenu from "./components/Sidemenu/Sidemenu";
 
 const App = () => {
   const navigate = useNavigate();
@@ -28,29 +27,21 @@ const App = () => {
   return (
     <div className="App">
       <Navbar />
-      <div className="filter-section p-3">
-        <div className="col-md-10 m-auto filter-container">
-          <img src={ FilterIcon } className="filter-icon" alt="filter Icon" />
-           <div className="select-down-icon">
-            <i><AiFillCaretDown/></i>
-            <select className="p-1 select" onChange={(e) => handleChangeRedirect(e.target.value)}>
-            {sections.map(section => (<option key={section.id} value={section.url} selected={pathname === section.url ? true : false}>{section.title}</option>))}
-          </select>
-        </div>
-      </div>
-      </div>
-      <div className="site-body mt-1">
-        <div className="m-auto">
-          <Routes>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/ui" element={<UI />}></Route>
-            <Route path="/backend" element={<Backend />}></Route>
-            <Route path="/qa" element={<QA />}></Route>
-            <Route path="/it" element={<IT />}></Route>
-            <Route path="/hrs" element={<HRs />}></Route>
-            <Route path="/profile/:profileId" element={<Profile />}></Route>
-            <Route path='*' element={<NotFound />} />
-          </Routes>
+      <div className="row col-md-12 col-sm-12">
+        <Sidemenu data={sections} handleChangeRedirect={handleChangeRedirect} />
+        <div className="site-body mt-1 col-md-10 col-sm-10">
+          <div className="m-auto">
+            <Routes>
+              <Route path="/" element={<Home />}></Route>
+              <Route path="/ui" element={<UI />}></Route>
+              <Route path="/backend" element={<Backend />}></Route>
+              <Route path="/qa" element={<QA />}></Route>
+              <Route path="/it" element={<IT />}></Route>
+              <Route path="/hrs" element={<HRs />}></Route>
+              <Route path="/profile/:profileId" element={<Profile />}></Route>
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </div>
         </div>
       </div>
     </div>
