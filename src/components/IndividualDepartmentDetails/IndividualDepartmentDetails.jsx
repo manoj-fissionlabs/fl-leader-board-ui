@@ -74,8 +74,8 @@ return (<>
       <div className="m-auto">
         {chartData.map((tech, i) => (<div key={i} className="chart_data">
           <div className="donutChartColorIndicator" style={{ backgroundColor: donutChartColors[i] }}></div>
-          <h4 className="m-0">{tech.label} </h4>
-          <h4 className="m-0"> - {tech.value}</h4>
+          <h5 className="techno m-0">{tech.label} </h5>
+          <h5 className="techno m-0"> - {tech.value}</h5>
         </div>))}
       </div>
     </div>)}
@@ -84,7 +84,7 @@ return (<>
       <div className="row g-3 g-lg-4 row-cols-1 row-cols-sm-1 row-cols-lg-2">
         {chartData && uiTechnologiesWithMembers && chartData.map((tech, i) => (<div key={i}>
           <div className="col mb-4">
-            <h3>{tech.label}</h3>
+            <h5 className="techno" >{tech.label}</h5>
             <div className="race-chart-main-container p-4">
             <div className="navbar-text mb-4 d-flex justify-content-center align-item-center" >
                <span className='pointer'>
