@@ -1,0 +1,17 @@
+.breadcrumb-item+.breadcrumb-item::before {
+    content: var(--bs-breadcrumb-divider, ">") !important;
+    color: #2D95EC !important;
+}
+
+a {
+    text-decoration: none !important;
+    text-align: left;
+    letter-spacing: 0px;
+    color: #2D95EC;
+    opacity: 1;
+}
+
+ol {
+    margin-top: 2.7%;
+    font-weight: 600;
+}
