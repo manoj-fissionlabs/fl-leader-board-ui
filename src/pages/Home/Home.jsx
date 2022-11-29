@@ -5,6 +5,7 @@ import home from './../../assets/home.png';
 import userPhoto from './../../assets/userPhoto.png';
 import PMImage from "../../assets/Project-managers.png";
 import { Tree, TreeNode } from 'react-organizational-chart';
+import BreadCrumbs from "../../components/Breadcrumbs/BreadCrumbs";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -55,6 +56,8 @@ const Home = () => {
   }
 
   return (
+    <>
+    <BreadCrumbs />
     <div className="m-auto mb-5 py-5">
       {isLoading && (
         <div className='notFoundCenteredDiv'>
@@ -79,6 +82,7 @@ const Home = () => {
         {recursion()}
       </Tree>)}
     </div>
+    </>
   );
 };
 
