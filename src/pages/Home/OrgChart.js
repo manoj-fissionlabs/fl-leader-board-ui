@@ -24,7 +24,6 @@ export const OrgChartComponent = (props, ref) => {
         props.onNodeClick(d)
       })
       .nodeContent((d) => {
-        console.log(d)
         return ReactDOMServer.renderToStaticMarkup(
           <CustomNodeContent {...d} />
         );

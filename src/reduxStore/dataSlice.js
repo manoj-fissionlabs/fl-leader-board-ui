@@ -8,7 +8,7 @@ const dataSlice = createSlice({
       {
         nodeId: 1,
         name: "Manoj Jadala",
-        parent_id: "",
+        parentNodeId: "",
         role: "UI-Developer",
       },
       {
@@ -34,15 +34,12 @@ const dataSlice = createSlice({
         name: "Arpit",
         parentNodeId: 1,
         role: "UI-Developer",
-      },
+      }
     ],
   },
   reducers: {
     addToParent(state, actions) {
       state.parentArr.push(actions.payload);
-    },
-    NewSibilings(state, actions) {
-      state.childrenArr = [...actions.payload];
     },
   },
 });
