@@ -75,7 +75,7 @@ return (<>
         {chartData.map((tech, i) => (<div key={i} className="chart_data">
           <div className="donutChartColorIndicator" style={{ backgroundColor: donutChartColors[i] }}></div>
           <h5 className="techno m-0">{tech.label} </h5>
-          <h5 className="techno m-0"> - {tech.value}</h5>
+          <h5 className="techno m-0"> {(tech.value*100/totalMembers).toFixed(2)}%</h5>
         </div>))}
       </div>
     </div>)}
