@@ -14,6 +14,7 @@ const IndividualDepartmentDetails = ({ departmentName }) => {
   const [uiTechnologiesWithMembers, setUiTechnologiesWithMembers] = useState([]);
   const [filterdUiTechnologiesMember, setFilterdUiTechnologiesMember] = useState([]);
   const [checker, setChecker] = useState(false)
+  const [totalMembers, setTotalMembers] = useState(0)
   
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -46,6 +47,13 @@ const IndividualDepartmentDetails = ({ departmentName }) => {
     });
     console.log("mappedUiTechnologies --> ", mappedUiTechnologies);
     setChartData(mappedUiTechnologies);
+
+    let value=0
+    for (const curr of mappedUiTechnologies){
+      value+=curr.value
+    }
+    setTotalMembers(value)
+
     const mappedUiTechnologiesWithMembers = formUiTechnologiesWithMembers.map(member => {
       return {
         "title": member.name + ' ' + member.surname,
@@ -75,7 +83,7 @@ return (<>
         {chartData.map((tech, i) => (<div key={i} className="chart_data">
           <div className="donutChartColorIndicator" style={{ backgroundColor: donutChartColors[i] }}></div>
           <h5 className="techno m-0">{tech.label} </h5>
-          <h5 className="techno m-0"> - {tech.value}</h5>
+          <h5 className="techno m-0"> {(tech.value*100/totalMembers).toFixed(2)}%</h5>
         </div>))}
       </div>
     </div>)}
