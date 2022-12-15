@@ -11,7 +11,7 @@ export const OrgChartComponent = (props, ref) => {
     let chart = null;
     if (props.data && d3Container.current) {
       if (!chart) {
-        chart = new OrgChart();
+      chart = new OrgChart();
       }
       chart
       .container(d3Container.current)
@@ -29,7 +29,7 @@ export const OrgChartComponent = (props, ref) => {
   })
         .render();
     }
-  }, [props.data, d3Container.current]);
+  }, [props,props.data]);
 
   return (
     <div>
