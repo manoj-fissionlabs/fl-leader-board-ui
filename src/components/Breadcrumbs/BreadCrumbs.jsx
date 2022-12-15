@@ -5,7 +5,7 @@ const BreadCrumbs = (props) => {
     const {data, getId} = props
     return (
         !data?<></>:
-        <Breadcrumb >
+        <Breadcrumb style={{ marginLeft: "2rem" }} >
             {
                 data.map((elem, i) => (
                     <Breadcrumb.Item key={elem.nodeId} active={i === data.length - 1 ? true : false} onClick={() => getId(elem.nodeId)} >{elem.name}</Breadcrumb.Item>

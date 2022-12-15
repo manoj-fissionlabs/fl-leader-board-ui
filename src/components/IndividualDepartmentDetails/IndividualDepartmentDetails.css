@@ -11,15 +11,17 @@
 
 .chart_data {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 2fr 0fr 1fr;
   align-items: center;
   justify-content: flex-end;
   margin-bottom: 1rem;
   width: 100%;
 }
 
-.chart_data h4 {
-  align-self: flex-end;
+.count{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .raceChart-itemTitle{

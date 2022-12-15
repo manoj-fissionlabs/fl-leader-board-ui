@@ -6,6 +6,8 @@ import { setProgress, sortArrayInDescendingOrder } from "../../utils/helpers";
 import api from "../../api/api";
 import "./IndividualDepartmentDetails.css"
 import { AiOutlineSearch } from "react-icons/ai";
+import { useDispatch } from "react-redux";
+import { dataActions } from "../../reduxStore/dataSlice";
 
 const IndividualDepartmentDetails = ({ departmentName }) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -14,7 +16,8 @@ const IndividualDepartmentDetails = ({ departmentName }) => {
   const [uiTechnologiesWithMembers, setUiTechnologiesWithMembers] = useState([]);
   const [filterdUiTechnologiesMember, setFilterdUiTechnologiesMember] = useState([]);
   const [checker, setChecker] = useState(false)
-  
+  const dispatch = useDispatch()
+
   useEffect(() => {
     window.scrollTo(0, 0);
     loadUiTechnologies();
@@ -68,6 +71,12 @@ const IndividualDepartmentDetails = ({ departmentName }) => {
     setChecker(!checker)
   }
 
+  let totalMember = 0;
+  for (const elem of chartData) {
+    totalMember += elem.value
+  }
+  dispatch(dataActions.updateTotalMemberCount(totalMember))
+
 return (<>
     {uiTechnologies && chartData && (<div className="donutChartContainer d-flex align-items-center">
       <div>{<DonutChart chartData={chartData} />}</div>
@@ -75,7 +84,8 @@ return (<>
         {chartData.map((tech, i) => (<div key={i} className="chart_data">
           <div className="donutChartColorIndicator" style={{ backgroundColor: donutChartColors[i] }}></div>
           <h5 className="techno m-0">{tech.label} </h5>
-          <h5 className="techno m-0"> - {tech.value}</h5>
+          <h5 className="px-3">-</h5>
+          <h5 className="techno m-0 count"> {tech.value}</h5>
         </div>))}
       </div>
     </div>)}

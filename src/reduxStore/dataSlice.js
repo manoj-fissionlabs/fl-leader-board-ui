@@ -328,8 +328,8 @@ const dataSlice = createSlice({
         "nodeId": 102, 
         parentNodeId: 101,
       },
-    ]
-  
+    ],
+    totalMemberCount: null
   },
   reducers: {
     addToParent(state, actions) {
@@ -337,7 +337,10 @@ const dataSlice = createSlice({
     },
     updateCurrentTreeData(state,actions) {
       state.currentTreeData=actions.payload
-    }  
+    } ,
+    updateTotalMemberCount(state, actions){
+      state.totalMemberCount = actions.payload
+    } 
   },
 });
 
